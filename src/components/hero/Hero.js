@@ -27,7 +27,17 @@ function Hero() {
 
   }
   const slidingVariants = {
-
+    initial : {
+      x: 0,
+    },
+    animate: {
+        x: "-180%",
+        transition: {
+          repeat: Infinity,
+          repeatType: "mirror",
+          duration: 20,
+        }
+    }
   }
 
   return (
@@ -66,6 +76,9 @@ function Hero() {
       </div>  
       <motion.div 
         className='slidingTextContainer'
+        variants={slidingVariants}
+        initial="initial"
+        animate="animate"
       >
         Software Development Engineer
       </motion.div>
