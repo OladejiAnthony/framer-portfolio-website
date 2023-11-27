@@ -3,6 +3,7 @@ import './App.scss';
 import Hero from './components/hero/Hero';
 import Parallax from './components/parallax/Parallax';
 import Services from './components/services/Services';
+import Portfolio from './components/portfolio/Portfolio';
 //import Test from './components/Test';
 
 
@@ -22,9 +23,7 @@ function App() {
       <section id='Portfolio'>
         <Parallax type="portfolio" />
       </section>
-      <section>Portfolio1</section>
-      <section>Portfolio2</section>
-      <section>Portfolio3</section>
+      <Portfolio />
       <section id='Contact'>Contact</section>
       <section id='About'>About</section>
       {/* <Test /> */}

@@ -1,59 +1,130 @@
-import React from 'react'
-import {motion} from "framer-motion"
+import React, { useRef } from 'react'
+import {motion, useInView} from "framer-motion"
 import "./Services.scss"
 
 function Services() {
+
+  const ref = useRef()
+
+  const isInView = useInView(
+    ref,
+    {margin: "-100px"}
+  );
+  
+  const variants = {
+    initial: {
+      x: -500,
+      y: 100,
+      opacity: 0
+    },
+    animate: {
+        x: 0,
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 1,
+            staggerChildren: 0.1
+        },
+    },
+  }
+
   return (
-    <motion.div className='services'>
+    <motion.div 
+      className='services'
+      variants={variants}
+      initial="initial"
+      //animate="animate" OR
+      //whileInView="animate"
+      ref={ref}
+      animate={isInView && "animate"}
+    >
       <motion.div
         className='textContainer'
+        variants={variants}
       >
-        <p>
+        <motion.p>
             I focus on helping your brand grow
             <br /> and move forward
-        </p>
+        </motion.p>
         <hr />
       </motion.div>
       <motion.div
         className='titleContainer'
+        variants={variants}
       >
         <div className='title'>
             <img src='/people.webp' alt='' />
             <h1>
-                <b>Unique</b> Ideas
+                <motion.b whileHover={{color: "orange"}}>Unique</motion.b> Ideas
             </h1>
         </div>
         <div className='title'>
             <h1>
-                <b>For Your</b> Business.
+                <motion.b whileHover={{color: "orange"}}>For Your</motion.b> Business.
             </h1>
-            <button>WHAT WE DO?</button>
+            <motion.button
+              whileHover={{
+                backgroundColor: "lightgray",
+                color: "orange",
+                opacity: 0.9
+              }}
+            >
+              WHAT WE DO ?
+              </motion.button>
         </div>
       </motion.div>
       <motion.div
         className='listContainer'
+        variants={variants}
       >
-        <div className='box'>
+        <motion.div className='box'
+          whileHover={{
+            backgroundColor: "lightgray",
+            color: "black"
+          }}
+        >
             <h2>Branding</h2>
             <p>
                 Lorem ipsum dollar sit amet consectetur adipisicing elit. 
             </p>
             <button>Go</button>
-        </div>
-        <div className='box'>
+        </motion.div>
+        <motion.div className='box'
+          whileHover={{
+            backgroundColor: "lightgray",
+            color: "black"
+          }}
+        >
             <h2>Branding</h2>
             <p>
                 Lorem ipsum dollar sit amet consectetur adipisicing elit. 
             </p>
             <button>Go</button>
-        </div>
-        <div className='box'>
+        </motion.div>
+        <motion.div className='box'
+          whileHover={{
+            backgroundColor: "lightgray",
+            color: "black"
+          }}
+        >
             <h2>Branding</h2>
             <p>
                 Lorem ipsum dollar sit amet consectetur adipisicing elit. 
             </p>
             <button>Go</button>
-        </div>
+        </motion.div>
+        <motion.div className='box'
+          whileHover={{
+            backgroundColor: "lightgray",
+            color: "black"
+          }}
+        >
+            <h2>Branding</h2>
+            <p>
+                Lorem ipsum dollar sit amet consectetur adipisicing elit. 
+            </p>
+            <button>Go</button>
+        </motion.div>
       </motion.div>
     </motion.div>
   )
