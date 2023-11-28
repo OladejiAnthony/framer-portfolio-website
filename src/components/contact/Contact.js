@@ -4,9 +4,16 @@ import "./Contact.scss"
 function Contact() {
   return (
     <div className='contact'>
-      Contact
+      <div className='textContainer'>
+
+      </div>
+      <div className='formContainer'>
+
+      </div>
     </div>
   )
 }
 
 export default Contact
+
+
