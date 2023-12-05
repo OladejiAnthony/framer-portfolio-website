@@ -23,7 +23,10 @@ a {
 section {
   height: 100vh;
   scroll-snap-align: center;
+}
 
+#shadow-host-companion {
+  height: calc(100vh - 500px);
 }
 
 @mixin mobile {

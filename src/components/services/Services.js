@@ -36,7 +36,8 @@ function Services() {
       //animate="animate" OR
       //whileInView="animate"
       ref={ref}
-      animate={isInView && "animate"}
+      animate={isInView && "animate"} // use for desktop build alone
+      //animate={ "animate"} // use for mobile
     >
       <motion.div
         className='textContainer'

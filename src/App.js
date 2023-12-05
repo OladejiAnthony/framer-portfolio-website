@@ -29,7 +29,7 @@ function App() {
       <Portfolio />
       <section id='Contact'>
         <Contact />
-      </section>
+      </section>  
       
       {/* <Test /> */}
 
